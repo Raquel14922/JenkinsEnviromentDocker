@@ -60,7 +60,7 @@ pipeline {
         stage('Deploy Service') {
             steps {
                 sh 'docker stop microservicio || true'
-                sh 'docker run -d --rm --name microservicio -e SPRING_PROFILES_ACTIVE=dev -p 8090:8090 192.168.1.7:8083/repository/docker-private/microservicio:latest'
+                sh 'docker run -d --rm --name microservicio -e SPRING_PROFILES_ACTIVE=dev -p 8090:8090 raquelch/microservicio:latest'
             }
         }
         stage('Stress') {
